@@ -9,7 +9,7 @@ public class ArrayListIterator {
 
         list.add("rahul");
         list.add("jail");
-        list.add(32); // Compile for you
+
         String s = list.get(1); // type casting is required
         System.out.println("Element is " + s);
 
