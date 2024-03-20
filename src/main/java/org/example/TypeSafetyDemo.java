@@ -5,16 +5,16 @@ import java.util.List;
 
 public class TypeSafetyDemo {
     public static void main(String[] args) {
+
         List list = new ArrayList();
-        list.add(10);
 
-        list.add("20"); // list can take  anything type
+        String s = (String) list.get(0); // typecasting
 
-        // but the type in diamonds its comfirmed
+        // After Generics, we don't need to typecast the object
 
-        List<Integer> lists = new ArrayList<Integer>();
-        lists.add(1);
+        List<String> lists = new ArrayList<String>();
+        list.add("hello");
 
-        lists.add("1"); // compile time error
+        String d = lists.get(0);
     }
 }
