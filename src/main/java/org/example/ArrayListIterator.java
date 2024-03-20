@@ -1,22 +1,26 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class ArrayListIterator {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<String>();
 
-        list.add("rahul");
-        list.add("jail");
+        Integer[] intArray = {10,20,3,4,5};
 
-        String s = list.get(1); // type casting is required
-        System.out.println("Element is " + s);
+        TestGenerics4.printArray(intArray);
 
-        Iterator<String> itr = list.iterator();
+        Character[] charArray = {'J','K','L'};
 
-        while(itr.hasNext()){
-            System.out.println(itr.next());
+        TestGenerics4.printArray(charArray);
+    }
+}
+
+class TestGenerics4 {
+    static <E> void printArray(E[] elements){
+        for(E element :  elements){
+            System.out.println(element);
         }
     }
 }
