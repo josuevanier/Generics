@@ -5,16 +5,23 @@ import java.util.List;
 
 public class TypeSafetyDemo {
     public static void main(String[] args) {
+        Test<Integer> iObj = new Test<Integer>(15);
+        System.out.println(iObj.getObject());
 
-        List list = new ArrayList();
+        // instance of string type
+        Test<String> sObj = new Test<String>("wow");
 
-        String s = (String) list.get(0); // typecasting
 
-        // After Generics, we don't need to typecast the object
-
-        List<String> lists = new ArrayList<String>();
-        list.add("hello");
-
-        String d = lists.get(0);
     }
+
 }
+    class  Test<T>{
+        // An object T is declared
+        T obj;
+
+        Test(T obj){this .obj = obj;}
+
+        public T getObject(){
+            return this.obj;
+        }
+    }
