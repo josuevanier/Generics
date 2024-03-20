@@ -5,23 +5,25 @@ import java.util.List;
 
 public class TypeSafetyDemo {
     public static void main(String[] args) {
-        Test<Integer> iObj = new Test<Integer>(15);
-        System.out.println(iObj.getObject());
+        // What this doing it takes two paraemeter you mst past the value of the string and the integer
+        Test<String, Integer> obj = new Test<String, Integer>("MTL",15);
 
-        // instance of string type
-        Test<String> sObj = new Test<String>("wow");
-
+        obj.print();
 
     }
 
 }
-    class  Test<T>{
+    class  Test<T, U>{
         // An object T is declared
         T obj;
+        U obj2;
 
-        Test(T obj){this .obj = obj;}
 
-        public T getObject(){
-            return this.obj;
+        Test(T obj, U obj2){this .obj = obj;
+        this.obj2 = obj2;}
+
+        public void print(){
+            System.out.println(obj);
+            System.out.println(obj2);
         }
-    }
+}
